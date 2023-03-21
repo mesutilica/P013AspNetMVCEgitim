@@ -35,5 +35,45 @@ namespace P013AspNetMVCEgitim.Controllers
             }
             return View();
         }
+        public IActionResult UyeDuzenle(int id)
+        {
+            var kayit = context.Uyes.Find(id); // adres çubuğundaki route üzerinden gönderilen id ile eşleşen kaydı bul
+            return View(kayit);
+        }
+        [HttpPost]
+        public IActionResult UyeDuzenle(Uye uye)
+        {
+            if (ModelState.IsValid) // eğer parantez içerisinde gönderilen uye nesnesi validasyon kurallarına uygunsa
+            {
+                context.Uyes.Update(uye); // View dan gönderilen uye nesnesini güncelle
+                context.SaveChanges(); // üst satırdaki ekleme işlemini kaydet.
+                return RedirectToAction("UyeListesi");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Lütfen Zorunlu Alanları Doldurunuz!");
+            }
+            return View();
+        }
+        public IActionResult UyeSil(int id)
+        {
+            var kayit = context.Uyes.Find(id); // adres çubuğundaki route üzerinden gönderilen id ile eşleşen kaydı bul
+            return View(kayit);
+        }
+        [HttpPost]
+        public IActionResult UyeSil(Uye uye)
+        {
+            try
+            {
+                context.Uyes.Remove(uye);
+                context.SaveChanges(); // üst satırdaki ekleme işlemini kaydet.
+                return RedirectToAction("UyeListesi");
+            }
+            catch (Exception hata)
+            {
+                ModelState.AddModelError("", "Hata Oluştu!" + hata.Message);
+            }
+            return View(uye);
+        }
     }
 }
