@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
 }
 <h1>
     Section Kullanımı
@@ -14,7 +13,23 @@
 </section>
 
 @section Scripts{
-    <script>
+    @*<script>
         alert("Section Kullanımı")
+    </script>*@
+    <script>
+        console.log("Section Kullanımı")
     </script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+}
+
+@section OzelIcerik{
+    <section class="alert alert-info">
+        Ozel Icerik de gönderebiliriz
+    </section>
+}
+
+@section OzelCss{
+    <style>
+        body { background-color: red; color: white; }
+    </style>
 }

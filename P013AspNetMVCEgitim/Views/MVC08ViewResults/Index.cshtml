@@ -1,0 +1,33 @@
+﻿
+@{
+}
+<h1>
+    MVC View Results Çeşitleri
+</h1>
+
+<h4>
+    Redirect Result : Sayfayı bir url adresine yönlendirmeyi sağlar
+</h4>
+
+@Html.ActionLink("Redirect Result","Yonlendir")
+
+<a href="/MVC08ViewResults/Yonlendir?arananDeger=aspNetMvc">Query String</a>
+
+<h4>
+    Redirect To Action Result : Sayfayı bir actiona yönlendirmemizi sağlar
+</h4>
+
+<a asp-action="ActionaYonlendir">Redirect To Action</a>
+
+<h4>
+    Redirect To Route Result : Sayfayı bir route a yönlendirmemizi sağlar
+</h4>
+
+<a asp-action="RouteYonlendir">Redirect To Route</a>
+
+<h4>
+    PartialView Result : Actiona gelecek istek sonucunda geriye partial view döndürmeyi sağlar
+</h4>
+
+<a asp-action="RouteYonlendir">PartialView Result</a>
+

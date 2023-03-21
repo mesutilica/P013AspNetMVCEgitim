@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/P013AspNetMVCEgitim.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("OzelCss", required: false)
 </head>
 <body>
     <header>
@@ -54,8 +55,8 @@
 
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/MVC06Section">MVC06 Section</a></li>
-                                <li><a class="dropdown-item" href="/">2</a></li>
-                                <li><a class="dropdown-item" href="/">3</a></li>
+                                <li><a class="dropdown-item" href="/MVC07Partial">MVC07 Partial</a></li>
+                                <li><a class="dropdown-item" href="/MVC08ViewResults">MVC08 ViewResults</a></li>
                             </ul>
                         </li>
 
@@ -76,6 +77,7 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - P013AspNetMVCEgitim - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            @await RenderSectionAsync("OzelIcerik", required: false)
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
