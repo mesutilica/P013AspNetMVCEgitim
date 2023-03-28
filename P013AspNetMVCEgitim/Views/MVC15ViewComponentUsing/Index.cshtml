@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "MVC15 ViewComponent Using";
+}
+
+<h1>MVC15 ViewComponent Using</h1>
+
+<p>
+    Asp.Net Mvc de her hangi bir controllera bağlı olmadan kendi kendine çalışabilen modüler yapılara viewcomponent denir
+</p>
+
+<h3>
+    Kullanımı
+</h3>
+
+<p>
+    Projeye ViewComponents klasörü ekleyip içerisine class ımızı ekleyerek ViewComponent sınıfından miras alıyoruz
+</p>
+
+@await Component.InvokeAsync("Kategoriler")
