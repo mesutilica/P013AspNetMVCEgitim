@@ -29,6 +29,11 @@ app.UseSession(); // uygulamada session kullanabilmek için bu satýrý ekliyoruz
 app.UseAuthentication(); // uygulama kullanýcý giriþ sistemini aktif etsin
 app.UseAuthorization(); // uygulama kullanýcý yetkilendirme(admin, user vb.) sistemini aktif etsin
 
+app.MapControllerRoute( // area nýn çalýþmasý için bu route ayarýný buraya ekledik.
+            name: "admin",
+            pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+          );
+
 app.MapControllerRoute( // uygulama nýn kullanacaðý routing yönlendirme ayarý
     name: "default", // route adý
     pattern: "{controller=Home}/{action=Index}/{id?}"); // eðer adres çubuðundan uygulamaya bir controller adý ve action adý gönderilmezse varsayýlan olarak Home controller ý ve içindeki Index isimli action ý çalýþtýrsýn. id deðeri ise ? iþareti ile parametrik yani isteðe baðlý belirtilmiþ.
